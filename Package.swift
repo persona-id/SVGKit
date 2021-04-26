@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SVGKit",
+    name: "PersonaSVGKit",
     platforms: [
         .macOS(.v10_10),
         .iOS(.v9),
@@ -10,34 +10,34 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "SVGKit",
-            targets: ["SVGKit"]
+            name: "PersonaSVGKit",
+            targets: ["PersonaSVGKit"]
         ),
-        .library(
-            name: "SVGKitSwift",
-            targets: ["SVGKitSwift"]
-        )
+//        .library(
+//            name: "SVGKitSwift",
+//            targets: ["SVGKitSwift"]
+//        )
     ],
     dependencies: [
-        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", .upToNextMajor(from: "3.7.0"))
+        //.package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", .upToNextMajor(from: "3.7.0"))
     ],
     targets: [
         .target(
-            name: "SVGKit",
+            name: "PersonaSVGKit",
             dependencies: [
-                "CocoaLumberjack"
+                //"CocoaLumberjack"
             ],
             path: "Source",
             exclude: [
                 "SwiftUI additions"
             ]
         ),
-        .target(
-            name: "SVGKitSwift",
-            dependencies: [
-                "SVGKit"
-            ],
-            path: "Source/SwiftUI additions"
-        )
+//        .target(
+//            name: "SVGKitSwift",
+//            dependencies: [
+//                "SVGKit"
+//            ],
+//            path: "Source/SwiftUI additions"
+//        )
     ]
 )
